@@ -60,6 +60,12 @@ func main() {
 		}
 	})()
 
+	go (func() {
+		// print nothing 5 seconds later
+		time.Sleep(5 * time.Second)
+		obj.Events.Off("eventName1", nil)
+	})()
+
 	for {}
 
 }

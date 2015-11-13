@@ -25,7 +25,12 @@ func (events *Events) On(name string, fn FnListener) *Listener {
 // Remove a listener from an event
 func (events *Events) Off(name string, listener *Listener) {
 	event := events.ensureEvent(name)
-	event.RemoveListener(listener)
+	if(listener != nil) {
+		event.RemoveListener(listener)
+	} else {
+		event.RemoveAllListeners()
+	}
+
 }
 
 // Add a listener to an event, refer Event.Once()

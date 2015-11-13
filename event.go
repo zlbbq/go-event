@@ -91,7 +91,7 @@ func (e *Event) RemoveListener(listener *Listener) bool {
 func (e *Event) RemoveAllListeners() {
 	e.locker.Lock()
 	defer e.locker.Unlock()
-	e.listeners = e.listeners[0:0]
+	e.listeners = make([]*Listener, 0)
 }
 
 // Get num of listeners
