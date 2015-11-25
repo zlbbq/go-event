@@ -131,7 +131,8 @@ func (e *Event) startListen() {
 }
 
 // Dispatch event
-func (e *Event) dispatch(arg EventArgument) {
+func (e *Event)
+dispatch(arg EventArgument) {
 	for i:=0;i<len(e.listeners);i++ {
 		l := e.listeners[i]
 		go (func(listener *Listener) {
